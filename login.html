@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="stylelog.css">
+</head>
+<body>
+   
+    <form action="login.php" method="POST">
+        <label>Username:</label>
+        <input type="text" name="user_name" required><br><br>
+
+        <label>Password:</label>
+        <input type="password" name="user_pass" required><br><br>
+
+        <label>Role:</label>
+        <select name="user_role" required>
+            <option value="buyer">Buyer</option>
+            <option value="seller">Seller</option>
+        </select><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

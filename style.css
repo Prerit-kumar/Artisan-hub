@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffddc1;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.logo {
+
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 0px;
+
+}
+
+.logo img {
+ 
+    height: 100px; /* reduce this from a larger value */
+    width: 100px;
+    margin-left: 5px;
+  
+}
+
+
+
+.nav-links a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #5e3c2b;
+  font-weight: bold;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  background-color: #5e3c2b;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3b2418;
+}
+
+.signup {
+  background-color: #e07a5f;
+}
+
+.signup:hover {
+  background-color: #c75b3b;
+}
+
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5e3c2b;
+}
+
+section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.product-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.product {
+  flex: 1;
+  background-color: #fffaf2;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-name {
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.product-price {
+  color: #b12704;
+  margin-bottom: 10px;
+}
+
+.add-to-cart {
+  background-color: #ff9900;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #e08800;
+}
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 8px 12px;
+  text-decoration: none;
+  background-color: #eee;
+  border-radius: 5px;
+  color: #333;
+}
+
+.pagination a.active {
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+}

@@ -1,0 +1,76 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fffaf3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .form-box {
+    background-color: #ffe8d6;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+  }
+  
+  .form-box h2 {
+    margin-bottom: 1.5rem;
+    color: #5e3c2b;
+    font-size: 1.8rem;
+  }
+  
+  .form-box label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+    color: #5e3c2b;
+    text-align: left;
+  }
+  
+  .form-box input,
+  .form-box select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #d8c0ae;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fffaf3;
+  }
+  
+  .form-box button {
+    background-color: #5e3c2b;
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-box button:hover {
+    background-color: #3b2418;
+  }
+  
+  /* Optional link style for login prompt */
+  .form-box p {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .form-box a {
+    color: #e07a5f;
+    text-decoration: none;
+  }
+  
+  .form-box a:hover {
+    text-decoration: underline;
+  }
+  

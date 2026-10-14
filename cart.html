@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    ul#cart-items {
+      list-style-type: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    ul#cart-items li {
+      background-color: #fff;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+    }
+
+    #total {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #2a7b4f;
+    }
+
+    #clear-cart {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #clear-cart:hover {
+      background-color: #c9302c;
+    }
+
+    .empty-message {
+      text-align: center;
+      color: #777;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Cart</h1>
+  <ul id="cart-items"></ul>
+  <p id="total"></p>
+  <button id="clear-cart">Clear Cart</button>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItems = document.getElementById("cart-items");
+    const totalElement = document.getElementById("total");
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = '<p class="empty-message">Your cart is empty.</p>';
+      totalElement.textContent = '';
+    } else {
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${index + 1}. ${item.name} - ₹${item.price}`;
+        cartItems.appendChild(li);
+        total += Number(item.price);
+      });
+
+      totalElement.textContent = `Total: ₹${total}`;
+    }
+
+    document.getElementById("clear-cart").addEventListener("click", () => {
+      localStorage.removeItem("cart");
+      location.reload();
+    });
+  </script>
+</body>
+</html>

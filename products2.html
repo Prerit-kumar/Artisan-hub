@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Products - Page 2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Handmade Heaven Logo" />
+    </div>
+    <div class="auth-buttons">
+      <a href="cart.html" class="btn">🛒 Cart</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="products">
+      <h2>Explore More Products</h2>
+
+      <div class="product-row">
+        <div class="product">
+          <img src="ring.jpg" alt="Handmade Ring" />
+          <p class="product-name">Handmade Ring</p>
+          <p class="product-price">₹400</p>
+          <button class="add-to-cart" data-name="Handmade Ring" data-price="400">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="earrings.jpg" alt="Earrings" />
+          <p class="product-name">Earrings</p>
+          <p class="product-price">₹300</p>
+          <button class="add-to-cart" data-name="Earrings" data-price="300">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="painting.jpg" alt="Mini Painting" />
+          <p class="product-name">Mini Painting</p>
+          <p class="product-price">₹900</p>
+          <button class="add-to-cart" data-name="Mini Painting" data-price="900">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-row">
+        <div class="product">
+          <img src="bracelet.jpg" alt="Bracelet" />
+          <p class="product-name">Bracelet</p>
+          <p class="product-price">₹350</p>
+          <button class="add-to-cart" data-name="Bracelet" data-price="350">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="scarf.jpg" alt="Handwoven Scarf" />
+          <p class="product-name">Handwoven Scarf</p>
+          <p class="product-price">₹1100</p>
+          <button class="add-to-cart" data-name="Handwoven Scarf" data-price="1100">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="journal.jpg" alt="Handmade Journal" />
+          <p class="product-name">Handmade Journal</p>
+          <p class="product-price">₹550</p>
+          <button class="add-to-cart" data-name="Handmade Journal" data-price="550">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-row">
+        <div class="product">
+          <img src="bag.jpg" alt="Canvas Bag" />
+          <p class="product-name">Canvas Bag</p>
+          <p class="product-price">₹1300</p>
+          <button class="add-to-cart" data-name="Canvas Bag" data-price="1300">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="woodcarving.jpg" alt="Wood Carving" />
+          <p class="product-name">Wood Carving</p>
+          <p class="product-price">₹2000</p>
+          <button class="add-to-cart" data-name="Wood Carving" data-price="2000">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="mug.jpg" alt="Handmade Mug" />
+          <p class="product-name">Handmade Mug</p>
+          <p class="product-price">₹700</p>
+          <button class="add-to-cart" data-name="Handmade Mug" data-price="700">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <a href="products.html">1</a>
+    <a href="#" class="active">2</a>
+    <a href="index.html">home</a>
+  </div>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function updateCart(product) {
+      if (cart.length >= 9) {
+        alert("Cart can hold a maximum of 9 items.");
+        return;
+      }
+
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${product.name} added to cart!`);
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.getAttribute("data-name");
+        const price = button.getAttribute("data-price");
+        updateCart({ name, price });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Handmade Heaven Logo" />
+    </div>
+    
+    <div class="auth-buttons">
+      <a href="cart.html" class="btn">🛒 Cart</a>
+      <a href="login.html" class="btn">Login</a>
+      <a href="signup.html" class="btn signup">Sign Up</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Support Indian Artisans</h2>
+      <p>Handcrafted products straight from talented artisans to your home.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+      <div class="product-row">
+        <div class="product">
+          <img src="pot.jpg" alt="Handmade Pot" />
+          <p class="product-name">Handmade Pot</p>
+          <p class="product-price">₹500</p>
+          <button class="add-to-cart" data-name="Handmade Pot" data-price="500">Add to Cart</button>
+
+        </div>
+        <div class="product">
+          <img src="vase.jpeg" alt="Wooden Vase" />
+          <p class="product-name">Wooden Vase</p>
+          <p class="product-price">₹750</p>
+          <button class="add-to-cart" data-name="wooden vase" data-price="750">Add to Cart</button>
+
+        </div>
+        <div class="product">
+          <img src="blanket.jpg" alt="Woolen Blanket" />
+          <p class="product-name">Woolen Blanket</p>
+          <p class="product-price">₹1200</p>
+          <button class="add-to-cart" data-name="Woolen Blanket" data-price="1200">Add to Cart</button>
+
+        </div>
+      </div>
+
+      <div class="product-row">
+        <div class="product">
+          <img src="pencil.jpg" alt="pencil" />
+          <p class="product-name">pencil</p>
+          <p class="product-price">₹60</p>
+          <button class="add-to-cart" data-name="pencil" data-price="60">Add to Cart</button>
+
+        </div>
+        <div class="product">
+          <img src="t-shirt.jpg" alt="t-shirt" />
+          <p class="product-name">Handmade T-shirt</p>
+          <p class="product-price">₹1500</p>
+          <button class="add-to-cart" data-name="Handmade T-shirt" data-price="1500">Add to Cart</button>
+
+        </div>
+        <div class="product">
+          <img src="stone.jpg" alt="Stone Sculpture" />
+          <p class="product-name">Stone Sculpture</p>
+          <p class="product-price">₹1000</p>
+          <button class="add-to-cart" data-name="Stone Sculpture" data-price="1000">Add to Cart</button>
+
+        </div>
+      </div>
+
+      <div class="product-row">
+        <div class="product">
+          <img src="lamp.jpg" alt="Handmade Lamp" />
+          <p class="product-name">Handmade Lamp</p>
+          <p class="product-price">₹800</p>
+          <button class="add-to-cart" data-name="Handmade Lamp" data-price="800">Add to Cart</button>
+
+        </div>
+        <div class="product">
+          <img src="tray.jpg" alt="Decorative Tray" />
+          <p class="product-name">Decorative Tray</p>
+          <p class="product-price">₹650</p>
+          <button class="add-to-cart" data-name="Decorative Tray" data-price="650">Add to Cart</button>
+
+        </div>
+        <div class="product">
+          <img src="wallet.jpg" alt="Leather Wallet" />
+          <p class="product-name">Leather Wallet</p>
+          <p class="product-price">₹1200</p>
+          <button class="add-to-cart" data-name="Leather Wallet" data-price="1200">Add to Cart</button>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+    function updateCart(product) {
+      if (cart.length >= 9) {
+        alert("Cart can hold a maximum of 9 items.");
+        return;
+      }
+  
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${product.name} added to cart!`);
+    }
+  
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.getAttribute("data-name");
+        const price = button.getAttribute("data-price");
+  
+        updateCart({ name, price });
+      });
+    });
+  </script>
+  <script>
+    document.getElementById("clear-cart").addEventListener("click", () => {
+      localStorage.removeItem("cart");
+      location.reload(); // Refresh the page to update the UI
+    });
+  </script>
+  
+  
+</body>
+</html>
+
+
